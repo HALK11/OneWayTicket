@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Клуб спикеров "ONE WAY TICKET"</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .cta-button {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #ff6600;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            float: left;
+        }
+
+        .cta-button:hover {
+            background-color: #e65c00;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .about-club {
+            margin-top: 20px;
+        }
+
+        .program {
+            margin-top: 20px;
+        }
+
+        .founder {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .founder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .subscribe-button {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .contact {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Стили для заголовка всплывающей формы */
+.popup h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Стили для полей ввода всплывающей формы */
+.popup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Стили для кнопки отправки всплывающей формы */
+.popup button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Стили для кнопки отправки при наведении всплывающей формы */
+.popup button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для ссылки закрытия всплывающей формы */
+.popup .close-link {
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+    color: #777;
+    text-decoration: none;
+}
+
+/* Стили для ссылки закрытия при наведении всплывающей формы */
+.popup .close-link:hover {
+    color: #333;
+}
+    </style>
+</head>
+<body>
+<nav>
+        <a href="#">О клубе</a>
+        <a href="programs.html">Программы курса</a>
+        <a href="founder.html">Основатель клуба</a>
+        <a href="courses.html">Онлайн-курсы</a>
+        <a href="residency.html">Резиденство</a>
+        <a href="project.html">Проекты</a>
+        <a href="contact.html">Контакты</a>
+    </nav>
+    <div class="header">
+        <h1>Клуб спикеров "ONE WAY TICKET"</h1>
+        <img class="logo" src="img/one-way-ticket-logo (1).png" alt="Логотип ONE WAY TICKET">
+    </div>
+
+    <div class="main-content">
+        <h2>Девиз нашего ораторского клуба "One Way Ticket"</h2>
+        <p>Научитесь говорить четко и красиво, а главное – уверенно! Всего за 90 минут вы без страха будете выступать публично и перед камерой!</p>
+        <a href="#" class="cta-button" onclick="openPopup()">Записаться</a>
+
+        <div class="about-club">
+            <h2>О клубе</h2>
+            <p>Добро пожаловать в спикер-клуб ONE WAY TICKET! Приходя в наш клуб, приобретите уверенность в общении, улучшите свои разговорные навыки и откройте путь на новый уровень речевого искусства и получите новые возможности.</p>
+            <ul>
+                <li>Отсутствие социального окружения и друзей, поэтому ребенок часто зависит от социальных развлекательных платформ;</li>
+                <li>Даже если родители свободно владеют казахским языком, уровень владения казахским языком у ребенка низкий;</li>
+                <li>Стеснение, неуверенность и неспособность отстоять свою позицию;</li>
+                <li>Отсутствие энтузиазма и мотивации к достижению цели.</li>
+            </ul>
+            <p>После прохождения курса речевого клуба:</p>
+            <ul>
+                <li>осваивает коммуникативные навыки;</li>
+                <li>повышается уверенность в себе;</li>
+                <li>совершенствует навыки публичных выступлений;</li>
+                <li>развивается в творческом направлении.</li>
+            </ul>
+            <a href="#" class="cta-button" onclick="openPopup()">Записаться</a>
+        </div>
+
+        <div class="program">
+            <h2>Программы курса:</h2>
+            <div>
+                <h3>Создание личного профиля</h3>
+                <img src="img/create own profile (1).jpg" alt="Описание изображения">
+                <p>Задать ребенку конкретную игру, обсудить ее и определить, в каком направлении он гибок, стремиться к индивидуальности.</p>
+                <a href="#" class="cta-button" onclick="openPopup()">Записаться</a>
+            </div>
+
+            <div>
+                <h3>Техника речи</h3>
+                <img src="img/Orator art_1.jpg" alt="Описание изображения">
+                <p>Ребенок учится правильному акценту и приемам речи, избавляется от клише, улучшается дикция. На этом уроке больший приоритет отдается практике, чем теории. Несомненно, системная работа приведет к результатам.</p>
+                <a href="#" class="cta-button" onclick="openPopup()">Записаться</a>
+            </div>
+
+            <div>
+                <h3>Актерское мастерство</h3>
+                <img src="img/Actor masterpice.jpg" alt="Описание изображения">
+                <p>Спикер также должен использовать актерские навыки во время общения или общения. На нашем занятии мы покажем ребенку практические работы в том же направлении.</p>
+                <a href="#" class="cta-button" onclick="openPopup()">Записаться</a>
+            </div>
+
+            <div>
+                <h3>Жесты говорящего или приемы удержания себя в окружающей среде.</h3>
+                <img src="img/Speaker Gestures.jpg" alt="Описание изображения">
+                <p>Какова будет техника поведения ребенка во время взаимодействия с другими людьми и друзьями, помимо выступления и выступления на публике?! Это также будет важно. Мы научим!</p>
+                <a href="#" class="cta-button" onclick="openPopup()">Записаться</a>
+            </div>
+
+            <div>
+                <h3>Эмоциональный интеллект</h3>
+                <img src="img/Emotional intellect.jpg" alt="Описание изображения">
+                <p>Эмоции делают нас людьми, то есть именно эмоции показывают или скрывают нас в окружающей среде. Учитывая, что большинство современных детей полны эмоций, как управлять ими на публике или во время публичных выступлений?! Мы покажем!</p>
+                <a href="#" class="cta-button" onclick="openPopup()">Записаться</a>
+            </div>
+
+            <div>
+                <h3>Нетворкинг</h3>
+                <img src="img/Networking.jpg" alt="Описание изображения">
+                <p>Каждый человек является причиной другого человека. Взаимодействуя с человеком, можно открыть определенные возможности. Какова важность налаживания связей или с кем поговорить, чтобы получить эти возможности? Скажем так!</p>
+                <a href="#" class="cta-button" onclick="openPopup()">Записаться</a>>
+            </div>
+        </div>
+
+        <div class="founder">
+            <h2>ОСНОВАТЕЛЬ КЛУБА ОРАТОРОВ:</h2>
+            <img src="img/Founder (1).jpg" alt="Основатель Клуба Ораторов">
+            <p>Куаныш Кашкилдыков – оратор с 7-летним стажем, ведущий-шоумен с 5-летним стажем, конферансье.</p>
+            <p>- Сертифицированный специалист по направлению «Ораторское искусство»;</p>
+            <p>• Организатор 5 авторских курсов, 10 авторских мастер-классов по курсу ораторского искусства.</p>
+            <p>На данный момент является главным экспертом по искусству «публичного выступления» речевого клуба «Билет в один конец».</p>
+            <p>"Билет в одну сторону..."</p>
+            <p>Получите направление на свое направление развития вместе со мной!</p>
+            <p>Я жду тебя!</p>
+            <button id="subscribeBtn">Подписаться</button>
+        </div>
+
+        <div class="contact">
+            <h2>Контакт</h2>
+            <p>Адрес: ул. Примерная, 123, Город</p>
+            <p>Email: info@onewayticketclub.com</p>
+            <p>Телефон: +7 (123) 456-7890</p>
+        </div>
+    </div>
+<div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h2>Записаться</h2>
+            <form id="telegramForm" action="#" method="post">
+            <label for="firstName">Имя:</label>
+            <input type="text" id="firstName" name="firstName" required><br>
+
+            <label for="lastName">Фамилия:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
+
+            <label for="phoneNumber">Номер телефона:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required><br>
+
+            <button type="button" onclick="submitForm()">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <div id="popupForm" class="popup">
+    <div class="popup-content">
+        <span class="close" id="closeBtn">&times;</span>
+        <h2>Подписаться</h2>
+        <form action="subscribe.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+            <br>
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+<script src="script.js"></script>
+    <script>
+  function submitForm() {
+  var firstName = document.getElementById('firstName').value;
+  var lastName = document.getElementById('lastName').value;
+  var phoneNumber = document.getElementById('phoneNumber').value;
+
+  var data = {
+    firstName: firstName,
+    lastName: lastName,
+    phoneNumber: phoneNumber
+  };
+
+  // Отправка данных в телеграмм бот с использованием AJAX
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'sumbit.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  xhr.send(JSON.stringify(data));
+}
+        function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
